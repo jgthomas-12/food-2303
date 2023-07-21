@@ -1,0 +1,11 @@
+<h3> Search Results </h3>
+
+<ol>
+<% @facade.each do |item| %>
+  <li>Description: <%= item.description %></li>
+  <p>Ingredients: <%= item.ingredients %></p>
+  <p>Brand Owner: <%= item.brand_owner %></p>
+  <p>UPC: <%= item.upc %></p>
+  <p>Amount of Items: <%= item.search_count %></p>
+<% end %>
+</ol>

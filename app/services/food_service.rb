@@ -4,7 +4,7 @@ class FoodService
   end
 
   def search_the_foods(search)
-    get_url("fdc/v1/foods/search?&query=#{search}")
+    get_url("fdc/v1/foods/search?&query=#{search}&pageSeize=10")
   end
 
   def get_url(url)

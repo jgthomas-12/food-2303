@@ -18,12 +18,17 @@ RSpec.describe "foods index" do
     # - The food's Brand Owner
     # - The food's ingredients
 
-    # it "links to the foods index from the search button" do
-    #   visit root_path
-    #   fill_in the search box with "sweet potatoes"
-    #   click_button "Search"
-    #   expect(current_path).to eq(foods_path)
+    it "displays the items search count and a list of attributes" do
+      visit root_path
+      fill_in :q, with: "sweet potatoes"
+      click_button "Search"
+      expect(current_path).to eq(foods_path)
 
-    # end
+      expect(page).to have_content("Description: SWEET POTATOES")
+      expect(page).to have_content("Ingredients: ORGANIC SWEET POTATOES")
+      expect(page).to have_content("Brand Owner: NOT A BRANDED ITEM")
+      expect(page).to have_content("UPC: 8901020020844")
+      expect(page).to have_content("Amount of Items: 55579")
+    end
   end
 end
